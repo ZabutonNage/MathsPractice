@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background-color: #def;
+}
+#main {
+    font-size: 48px;
+    text-align: center;
+}
+#prob {
+    padding: 1em;
+    font-size: 72px;
+}
+#answer input {
+    font-size: 48px;
+    text-align: center;
+    width: 6em;
+}
