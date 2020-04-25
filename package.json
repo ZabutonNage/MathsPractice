@@ -1,0 +1,25 @@
+{
+  "name": "maths-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "pulp --watch browserify --to ./public/app.js",
+    "build": "npm run build:ps && npm run build:copy && npm run build:uglify",
+    "build:ps": "pulp browserify -O --to ./public/app.js",
+    "build:copy": "copyfiles -u 1 \"./public/*\" \"./docs/\"",
+    "build:uglify": "uglifyjs \"./docs/app.js\" -o \"./docs/app.js\" -c -m --verbose --mangle-props regex=\"/[A-Z]+(_[A-Z])*/\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.8",
+    "copyfiles": "^2.2.0",
+    "pulp": "^14.0.0",
+    "purescript": "^0.13.6",
+    "snabbdom": "^0.7.4",
+    "snabbdom-to-html": "^6.0.0",
+    "uglify-js": "^3.9.1"
+  }
+}

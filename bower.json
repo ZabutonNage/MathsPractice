@@ -1,0 +1,20 @@
+{
+  "name": "maths-practice",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^4.1.1",
+    "purescript-console": "^4.2.0",
+    "purescript-effect": "^2.0.1",
+    "purescript-flame": "^0.5.1",
+    "purescript-random": "^4.0.0",
+    "purescript-record": "^2.0.2"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^4.0.0"
+  }
+}
