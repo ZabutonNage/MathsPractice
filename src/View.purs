@@ -21,6 +21,7 @@ view model = HE.main "main" [
   HE.div [HA.id "answer"] [
     HE.span_ "x = ",
     HE.input [
+      HA.type' "number",
       HA.value model.answer,
       HA.onInput ReadInput,
       HA.onKeypress $ whenKey "Enter" \val -> TrySolve val,

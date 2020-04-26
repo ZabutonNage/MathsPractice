@@ -15,3 +15,8 @@ body {
     text-align: center;
     width: 6em;
 }
+#answer input::-webkit-inner-spin-button,
+#answer input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
