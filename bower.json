@@ -12,7 +12,8 @@
     "purescript-effect": "^2.0.1",
     "purescript-flame": "^0.5.1",
     "purescript-random": "^4.0.0",
-    "purescript-record": "^2.0.2"
+    "purescript-record": "^2.0.2",
+    "purescript-arrays": "^5.3.1"
   },
   "devDependencies": {
     "purescript-psci-support": "^4.0.0"
