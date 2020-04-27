@@ -9,7 +9,8 @@ import Prelude
 import Effect (Effect)
 import Effect.Random (randomInt)
 
-import Data.Maybe (Maybe(..))
+import Data.Array (length, index)
+import Data.Maybe (Maybe(..), fromMaybe)
 
 
 data Problem = Problem {
@@ -22,9 +23,9 @@ data Problem = Problem {
 type Result = Int
 
 generate :: Maybe Problem -> Effect Problem
-generate Nothing = simpleAddition
+generate Nothing = coreMultiplication
 generate justPrev@(Just prev) = do
-  next <- simpleAddition
+  next <- coreMultiplication
   if next == prev
     then generate justPrev
     else pure next
@@ -40,6 +41,19 @@ simpleAddition = do
     result: a + b
   }
 
+coreMultiplication :: Effect Problem
+coreMultiplication = do
+  let factors = [2, 2, 5, 5, 10]
+  a_ <- randomInt 0 (length factors - 1) <#> (fromMaybe 1 <<< index factors)
+  b_ <- randomInt 1 10
+  order <- randomInt 0 1
+  let { a, b } = if order == 1 then { a: a_, b: b_ } else { a: b_, b: a_ }
+
+  pure $ Problem {
+    a, b,
+    op: "×",
+    result: a * b
+  }
 
 instance showProblem :: Show Problem where
   show (Problem { a, b, op }) = show a <> " " <> op <> " " <> show b <> " = x"
