@@ -1,13 +1,17 @@
+html {
+    font-size: 48px;
+}
 body {
     margin: 0;
     background-color: #def;
 }
 #main {
-    font-size: 48px;
     text-align: center;
 }
+#main > * {
+    margin: 1rem 0;
+}
 #prob {
-    padding: 1em;
     font-size: 72px;
 }
 #answer input {
