@@ -23,7 +23,7 @@ view model = HE.main "main" [
     HE.input [
       HA.type' "number",
       HA.value model.answer,
-      HA.onInput ReadInput,
+      HA.onInput ReadAnswer,
       HA.onKeypress $ whenKey "Enter" \val -> TrySolve val,
       HA.autofocus true
     ]

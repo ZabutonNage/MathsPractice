@@ -5,5 +5,5 @@ module Message (
 
 data Message
   = Ignore
-  | ReadInput String
+  | ReadAnswer String
   | TrySolve String
