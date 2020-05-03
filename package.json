@@ -8,7 +8,7 @@
     "build": "npm run build:ps && npm run build:copy && npm run build:uglify",
     "build:ps": "pulp browserify -O --to ./public/app.js",
     "build:copy": "copyfiles -u 1 \"./public/*\" \"./docs/\"",
-    "build:uglify": "uglifyjs \"./docs/app.js\" -o \"./docs/app.js\" -c -m --verbose --mangle-props regex=\"/[A-Z]+(_[A-Z])*/\""
+    "build:uglify": "uglifyjs \"./docs/app.js\" -o \"./docs/app.js\" -c -m --verbose"
   },
   "keywords": [],
   "author": "",
