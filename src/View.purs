@@ -26,7 +26,7 @@ view model = HE.main "main" [
       HA.value model.answer,
       HA.disabled (not model.limitRunning && isLimit model.mode),
       HA.onInput ReadAnswer,
-      HA.onKeypress $ whenKey "Enter" \val -> TrySolve val,
+      HA.onKeypress $ whenKey "Enter" TrySolve,
       HA.autofocus true
     ]
   ],
