@@ -10,7 +10,7 @@
     "purescript-prelude": "^4.1.1",
     "purescript-console": "^4.2.0",
     "purescript-effect": "^2.0.1",
-    "purescript-flame": "^0.5.1",
+    "purescript-flame": "^0.6.0",
     "purescript-random": "^4.0.0",
     "purescript-record": "^2.0.2",
     "purescript-arrays": "^5.3.1"
