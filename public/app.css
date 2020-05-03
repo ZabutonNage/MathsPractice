@@ -19,8 +19,63 @@ body {
     text-align: center;
     width: 6em;
 }
-#answer input::-webkit-inner-spin-button,
-#answer input::-webkit-outer-spin-button {
+#mode-settings {
+    font-size: 40px;
+    margin-top: 1rem;
+}
+#mode-settings fieldset.radio-group {
+    display: inline-block;
+    text-align: left;
+    border: none;
+}
+#mode-settings fieldset.radio-group[disabled] * {
+    cursor: not-allowed !important;
+}
+#mode-settings fieldset.radio-group > div {
+    margin-bottom: .5em;
+}
+#mode-settings fieldset.radio-group input[type="radio"] {
+    margin-right: 1em;
+}
+#mode-settings label,
+#mode-settings label input {
+    cursor: pointer;
+}
+#mode-settings .mode-limit-inp {
+    margin-left: 1em;
+    width: 4em;
+    font-size: inherit;
+    padding-left: .2em;
+}
+
+#mode-settings .mode-limit-controls {
+    font-size: 36px;
+}
+#mode-settings .mode-limit-controls > div {
+    margin-bottom: .8em;
+}
+#mode-settings .mode-limit-controls button {
+    margin: 0 .5em;
+    width: 5em;
+    cursor: pointer;
+    font-size: inherit;
+}
+#mode-settings .mode-limit-controls button[disabled] {
+    cursor: not-allowed !important;
+}
+#mode-settings .mode-limit-stats {
+    display: inline-block;
+    text-align: left;
+}
+#mode-settings .mode-limit-stats > div {
+    margin-bottom: .3em;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+[hidden] {
+    display: none !important;
 }

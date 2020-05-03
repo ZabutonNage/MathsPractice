@@ -5,5 +5,9 @@ module Message (
 
 data Message
   = Ignore
+  | ChangeGameMode String
+  | ReadLimit String
+  | StartLimit
+  | StopLimit
   | ReadAnswer String
   | TrySolve String

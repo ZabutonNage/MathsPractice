@@ -29,5 +29,11 @@ main = FAN.mount_ (QuerySelector "#main") {
 init :: Model
 init = {
   answer: "",
-  problem: unsafePerformEffect $ generate Nothing
+  problem: unsafePerformEffect (generate Nothing),
+  mode: Endless,
+  limitRunning: false,
+  probsToGo: 0,
+  correctCount: 0,
+  lastCorrect: false,
+  limitCompleted: false
 }
