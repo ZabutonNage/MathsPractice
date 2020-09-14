@@ -22,10 +22,14 @@ data Problem = Problem {
 
 type Result = Int
 
+theProblem :: Effect Problem
+theProblem = tenByTen
+
+
 generate :: Maybe Problem -> Effect Problem
-generate Nothing = coreMultiplication
+generate Nothing = theProblem
 generate justPrev@(Just prev) = do
-  next <- coreMultiplication
+  next <- theProblem
   if next == prev
     then generate justPrev
     else pure next
@@ -42,8 +46,13 @@ simpleAddition = do
   }
 
 coreMultiplication :: Effect Problem
-coreMultiplication = do
-  let factors = [2, 2, 5, 5, 10]
+coreMultiplication = multiplication [2, 2, 5, 5, 10]
+
+tenByTen :: Effect Problem
+tenByTen = multiplication [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+multiplication :: Array Int -> Effect Problem
+multiplication factors = do
   a_ <- randomInt 0 (length factors - 1) <#> (fromMaybe 1 <<< index factors)
   b_ <- randomInt 1 10
   order <- randomInt 0 1
