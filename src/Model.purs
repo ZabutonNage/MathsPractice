@@ -66,7 +66,4 @@ setLimitCompleted :: Boolean -> Model -> Model
 setLimitCompleted = set (SProxy :: SProxy "limitCompleted")
 
 
-instance eqGameMode :: Eq GameMode where
-  eq Endless   Endless   = true
-  eq (Limit x) (Limit y) = x == y
-  eq _         _         = false
+derive instance eqGameMode :: Eq GameMode

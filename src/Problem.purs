@@ -67,5 +67,4 @@ multiplication factors = do
 instance showProblem :: Show Problem where
   show (Problem { a, b, op }) = show a <> " " <> op <> " " <> show b <> " = x"
 
-instance eqProblem :: Eq Problem where
-  eq (Problem p1) (Problem p2) = p1 == p2
+derive instance eqProblem :: Eq Problem
