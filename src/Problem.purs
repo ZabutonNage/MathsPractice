@@ -49,12 +49,12 @@ coreMultiplication :: Effect Problem
 coreMultiplication = multiplication [2, 2, 5, 5, 10]
 
 tenByTen :: Effect Problem
-tenByTen = multiplication [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tenByTen = multiplication [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 multiplication :: Array Int -> Effect Problem
 multiplication factors = do
   a_ <- randomInt 0 (length factors - 1) <#> (fromMaybe 1 <<< index factors)
-  b_ <- randomInt 1 10
+  b_ <- randomInt 2 10
   order <- randomInt 0 1
   let { a, b } = if order == 1 then { a: a_, b: b_ } else { a: b_, b: a_ }
 
